@@ -1,0 +1,26 @@
+{
+  "name": "cortex-plugin-email-marketing",
+  "version": "1.0.0",
+  "description": "Email Marketing Campaign Manager — Mailchimp/Klaviyo/SendGrid for drip campaigns, audience segments, and A/B testing",
+  "kind": "esm",
+  "entryPoint": "mod.ts",
+  "runtime": "deno",
+  "author": "CortexPrism",
+  "license": "MIT",
+  "repository": "https://github.com/CortexPrism/cortex-plugin-email-marketing",
+  "homepage": "https://cortexprism.io/marketplace/plugins/email-marketing",
+  "capabilities": ["tools", "network:fetch"],
+  "tools": [
+    {
+      "name": "email_create_campaign",
+      "description": "Create email campaign with templates",
+      "params": []
+    },
+    { "name": "email_define_segment", "description": "Define audience segment", "params": [] },
+    { "name": "email_ab_test", "description": "Set up A/B test for subject lines", "params": [] },
+    { "name": "email_analyze", "description": "Analyze open rates and conversions", "params": [] }
+  ],
+  "dependencies": {},
+  "peerDependencies": { "cortex": ">=1.0.0" },
+  "aiDisclosure": { "tools": ["Kilo (DeepSeek) — batch scaffold"], "humanReview": true }
+}
