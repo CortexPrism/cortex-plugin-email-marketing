@@ -1,5 +1,5 @@
 // deno-lint-ignore-file require-await, no-unused-vars
-import type { PluginContext, Tool, ToolResult } from 'cortex/plugins';
+import type { PluginContext, Tool, ToolResult } from "cortex/plugins";
 function ok(n: string, o: unknown, s: number): ToolResult {
   return {
     toolName: n,
@@ -11,21 +11,24 @@ function ok(n: string, o: unknown, s: number): ToolResult {
 
 const email_create_campaignTool: Tool = {
   definition: {
-    name: 'email_create_campaign',
-    description: 'Create email campaign with templates',
+    name: "email_create_campaign",
+    description: "Create email campaign with templates",
     params: [],
-    capabilities: ['network:fetch'],
+    capabilities: ["network:fetch"],
   },
   execute: async (args, ctx) => {
     const s = Date.now();
     try {
-      ctx.logger.info('[email-marketing] email_create_campaign executed');
-      return ok('email_create_campaign', { status: 'completed', result: 'stub' }, s);
+      ctx.logger.info("[email-marketing] email_create_campaign executed");
+      return ok("email_create_campaign", {
+        status: "completed",
+        result: "stub",
+      }, s);
     } catch (e) {
       return {
-        toolName: 'email_create_campaign',
+        toolName: "email_create_campaign",
         success: false,
-        output: '',
+        output: "",
         error: String(e),
         durationMs: Date.now() - s,
       };
@@ -35,21 +38,25 @@ const email_create_campaignTool: Tool = {
 
 const email_define_segmentTool: Tool = {
   definition: {
-    name: 'email_define_segment',
-    description: 'Define audience segment',
+    name: "email_define_segment",
+    description: "Define audience segment",
     params: [],
-    capabilities: ['network:fetch'],
+    capabilities: ["network:fetch"],
   },
   execute: async (args, ctx) => {
     const s = Date.now();
     try {
-      ctx.logger.info('[email-marketing] email_define_segment executed');
-      return ok('email_define_segment', { status: 'completed', result: 'stub' }, s);
+      ctx.logger.info("[email-marketing] email_define_segment executed");
+      return ok(
+        "email_define_segment",
+        { status: "completed", result: "stub" },
+        s,
+      );
     } catch (e) {
       return {
-        toolName: 'email_define_segment',
+        toolName: "email_define_segment",
         success: false,
-        output: '',
+        output: "",
         error: String(e),
         durationMs: Date.now() - s,
       };
@@ -59,21 +66,21 @@ const email_define_segmentTool: Tool = {
 
 const email_ab_testTool: Tool = {
   definition: {
-    name: 'email_ab_test',
-    description: 'Set up A/B test for subject lines',
+    name: "email_ab_test",
+    description: "Set up A/B test for subject lines",
     params: [],
-    capabilities: ['network:fetch'],
+    capabilities: ["network:fetch"],
   },
   execute: async (args, ctx) => {
     const s = Date.now();
     try {
-      ctx.logger.info('[email-marketing] email_ab_test executed');
-      return ok('email_ab_test', { status: 'completed', result: 'stub' }, s);
+      ctx.logger.info("[email-marketing] email_ab_test executed");
+      return ok("email_ab_test", { status: "completed", result: "stub" }, s);
     } catch (e) {
       return {
-        toolName: 'email_ab_test',
+        toolName: "email_ab_test",
         success: false,
-        output: '',
+        output: "",
         error: String(e),
         durationMs: Date.now() - s,
       };
@@ -83,21 +90,21 @@ const email_ab_testTool: Tool = {
 
 const email_analyzeTool: Tool = {
   definition: {
-    name: 'email_analyze',
-    description: 'Analyze open rates and conversions',
+    name: "email_analyze",
+    description: "Analyze open rates and conversions",
     params: [],
-    capabilities: ['network:fetch'],
+    capabilities: ["network:fetch"],
   },
   execute: async (args, ctx) => {
     const s = Date.now();
     try {
-      ctx.logger.info('[email-marketing] email_analyze executed');
-      return ok('email_analyze', { status: 'completed', result: 'stub' }, s);
+      ctx.logger.info("[email-marketing] email_analyze executed");
+      return ok("email_analyze", { status: "completed", result: "stub" }, s);
     } catch (e) {
       return {
-        toolName: 'email_analyze',
+        toolName: "email_analyze",
         success: false,
-        output: '',
+        output: "",
         error: String(e),
         durationMs: Date.now() - s,
       };
@@ -106,10 +113,10 @@ const email_analyzeTool: Tool = {
 };
 
 export async function onLoad(ctx: PluginContext): Promise<void> {
-  ctx.logger.info('[cortex-plugin-email-marketing] Loaded');
+  ctx.logger.info("[cortex-plugin-email-marketing] Loaded");
 }
 export async function onUnload(ctx: PluginContext): Promise<void> {
-  ctx.logger.info('[cortex-plugin-email-marketing] Unloading...');
+  ctx.logger.info("[cortex-plugin-email-marketing] Unloading...");
 }
 export const tools: Tool[] = [
   email_create_campaignTool,

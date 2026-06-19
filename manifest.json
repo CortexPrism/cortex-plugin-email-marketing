@@ -16,11 +16,26 @@
       "description": "Create email campaign with templates",
       "params": []
     },
-    { "name": "email_define_segment", "description": "Define audience segment", "params": [] },
-    { "name": "email_ab_test", "description": "Set up A/B test for subject lines", "params": [] },
-    { "name": "email_analyze", "description": "Analyze open rates and conversions", "params": [] }
+    {
+      "name": "email_define_segment",
+      "description": "Define audience segment",
+      "params": []
+    },
+    {
+      "name": "email_ab_test",
+      "description": "Set up A/B test for subject lines",
+      "params": []
+    },
+    {
+      "name": "email_analyze",
+      "description": "Analyze open rates and conversions",
+      "params": []
+    }
   ],
   "dependencies": {},
   "peerDependencies": { "cortex": ">=1.0.0" },
-  "aiDisclosure": { "tools": ["Kilo (DeepSeek) — batch scaffold"], "humanReview": true }
+  "aiDisclosure": {
+    "tools": ["Kilo (DeepSeek) — batch scaffold"],
+    "humanReview": true
+  }
 }
